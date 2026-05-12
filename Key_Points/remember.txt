@@ -1,0 +1,413 @@
+# Java Classes & Objects — Interview Key Points
+
+## 1. What is a Class?
+
+* A **class** is a blueprint/template for creating objects.
+* It contains:
+
+  * **Data members (variables/fields)**
+  * **Methods (functions/behaviors)**
+  * **Constructors**
+* Memory is **not allocated** when a class is created.
+
+### Example
+
+```java
+class Student {
+    String name;
+    int age;
+
+    void study() {
+        System.out.println("Student is studying");
+    }
+}
+```
+
+---
+
+## 2. What is an Object?
+
+* An **object** is an instance of a class.
+* Memory is allocated when an object is created using `new`.
+
+### Syntax
+
+```java
+ClassName obj = new ClassName();
+```
+
+### Example
+
+```java
+Student s1 = new Student();
+```
+
+---
+
+# 3. Difference Between Class and Object
+
+| Class               | Object            |
+| ------------------- | ----------------- |
+| Blueprint           | Real instance     |
+| No memory allocated | Memory allocated  |
+| Logical entity      | Physical entity   |
+| Defines behavior    | Performs behavior |
+
+---
+
+# 4. Important OOP Concepts in Java
+
+## Encapsulation
+
+* Wrapping data and methods together.
+* Achieved using:
+
+  * private variables
+  * public getter/setter methods
+
+```java
+class Employee {
+    private int salary;
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+}
+```
+
+### Interview Line
+
+> Encapsulation provides data hiding and security.
+
+---
+
+## Inheritance
+
+* One class acquires properties of another class.
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+}
+```
+
+### Interview Line
+
+> Inheritance promotes code reusability.
+
+---
+
+## Polymorphism
+
+* One method behaves differently.
+
+### Method Overloading
+
+```java
+void add(int a, int b)
+void add(double a, double b)
+```
+
+### Method Overriding
+
+```java
+class A {
+   void show() {}
+}
+
+class B extends A {
+   void show() {}
+}
+```
+
+### Interview Line
+
+> Polymorphism allows one interface with multiple implementations.
+
+---
+
+## Abstraction
+
+* Hiding implementation details.
+* Achieved using:
+
+  * Abstract classes
+  * Interfaces
+
+```java
+abstract class Vehicle {
+    abstract void start();
+}
+```
+
+---
+
+# 5. Types of Variables in Java
+
+| Variable Type             | Location                     | Lifetime          |
+| ------------------------- | ---------------------------- | ----------------- |
+| Local Variable            | Inside method                | Until method ends |
+| Instance Variable         | Inside class, outside method | Object lifetime   |
+| Class Variable (`static`) | Shared by all objects        | Program lifetime  |
+
+---
+
+# 6. Constructor
+
+* Special method used to initialize objects.
+* Same name as class.
+* No return type.
+
+```java
+class Dog {
+    Dog() {
+        System.out.println("Constructor called");
+    }
+}
+```
+
+### Types
+
+* Default constructor
+* Parameterized constructor
+
+---
+
+# 7. `this` Keyword
+
+* Refers to current object.
+
+```java
+this.age = age;
+```
+
+### Used for
+
+* Resolving variable conflicts
+* Calling current object methods
+* Constructor chaining
+
+---
+
+# 8. Accessing Variables and Methods
+
+```java
+obj.variableName;
+obj.methodName();
+```
+
+Example:
+
+```java
+dog.setAge(2);
+dog.printDetails();
+```
+
+---
+
+# 9. Object Creation Steps
+
+## Step 1 — Declaration
+
+```java
+Dog d;
+```
+
+## Step 2 — Instantiation
+
+```java
+d = new Dog();
+```
+
+## Step 3 — Initialization
+
+Constructor initializes object.
+
+---
+
+# 10. Static Keyword
+
+* Belongs to class, not object.
+
+```java
+static int count;
+```
+
+### Static Method
+
+```java
+static void show() {}
+```
+
+### Important Point
+
+* Static methods cannot access non-static variables directly.
+
+---
+
+# 11. Method
+
+* Block of code that performs a task.
+
+### Syntax
+
+```java
+returnType methodName(parameters) {
+}
+```
+
+### Types
+
+* User-defined methods
+* Predefined methods
+
+---
+
+# 12. Instance vs Static Variable
+
+| Instance Variable             | Static Variable |
+| ----------------------------- | --------------- |
+| Separate copy for each object | Shared copy     |
+| Object dependent              | Class dependent |
+
+---
+
+# 13. Common Interview Questions
+
+## Q1. Why is Java called Object-Oriented?
+
+Because Java uses classes and objects and supports:
+
+* Encapsulation
+* Inheritance
+* Polymorphism
+* Abstraction
+
+---
+
+## Q2. Difference between Method Overloading and Overriding
+
+| Overloading               | Overriding           |
+| ------------------------- | -------------------- |
+| Same method name          | Same method name     |
+| Different parameters      | Same parameters      |
+| Compile-time polymorphism | Runtime polymorphism |
+
+---
+
+## Q3. Difference between Class and Constructor
+
+| Class                 | Constructor        |
+| --------------------- | ------------------ |
+| Blueprint             | Initializes object |
+| Has methods/variables | Special method     |
+
+---
+
+## Q4. Why use `new` keyword?
+
+* Allocates memory for object.
+* Calls constructor.
+
+---
+
+## Q5. Can a class have multiple objects?
+
+Yes.
+
+```java
+Student s1 = new Student();
+Student s2 = new Student();
+```
+
+---
+
+# 14. Important Rules
+
+* Only **one public class** per file.
+* File name must match public class name.
+* Java starts execution from:
+
+```java
+public static void main(String[] args)
+```
+
+---
+
+# 15. Interview Tips (Very Important)
+
+## Remember These Definitions
+
+### Class
+
+> A class is a blueprint for creating objects.
+
+### Object
+
+> An object is an instance of a class.
+
+### Encapsulation
+
+> Binding data and methods into a single unit.
+
+### Inheritance
+
+> Acquiring properties from parent class.
+
+### Polymorphism
+
+> One method behaving in multiple forms.
+
+### Abstraction
+
+> Hiding internal implementation details.
+
+---
+
+# 16. Most Asked Coding Example
+
+```java
+class Car {
+    String color;
+
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c1 = new Car();
+
+        c1.color = "Red";
+
+        System.out.println(c1.color);
+        c1.drive();
+    }
+}
+```
+
+---
+
+# 17. Quick Revision Before Interview
+
+✅ Class = Blueprint
+✅ Object = Instance of class
+✅ `new` creates object
+✅ Constructor initializes object
+✅ `this` refers current object
+✅ Inheritance = Reuse code
+✅ Encapsulation = Data hiding
+✅ Polymorphism = Multiple behaviors
+✅ Abstraction = Hide implementation
+✅ Static = Shared among objects
+✅ Java execution starts from `main()`
