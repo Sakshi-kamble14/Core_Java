@@ -35,6 +35,7 @@ public class Count_Carry {
         	int input2=sc.nextInt();
         	
         	System.out.println(carry_count(input1,input2));
+        	sc.close();
 		}
 
 		
